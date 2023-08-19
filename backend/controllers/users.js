@@ -1,5 +1,3 @@
-// Создание константы User из модели user для дальнейшего
-// использования в функциях
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const User = require('../models/user');
@@ -15,7 +13,6 @@ const NotFoundPageError = require('../errors/NotFoundPageError');
 const DuplicateDataError = require('../errors/DuplicateDataError');
 const InvalidDataError = require('../errors/InvalidDataError');
 
-// регистрация пользователя
 function registration(req, res, next) {
   const {
     email, password, name, about, avatar,
@@ -60,7 +57,6 @@ function registration(req, res, next) {
     });
 }
 
-// логин пользователя
 function login(req, res, next) {
   const { email, password } = req.body;
 
@@ -81,14 +77,12 @@ function login(req, res, next) {
     .catch(next);
 }
 
-// Получение пользователей из базы данных mongodb
 function getUsers(_, res, next) {
   User.find({})
     .then((users) => res.send({ users }))
     .catch(next);
 }
 
-// Пользователь по его id
 function getUserById(req, res, next) {
   const { id } = req.params;
 
@@ -108,7 +102,6 @@ function getUserById(req, res, next) {
     });
 }
 
-// Пользователь
 function getUserInfo(req, res, next) {
   const { userId } = req.user;
 
@@ -127,7 +120,6 @@ function getUserInfo(req, res, next) {
     });
 }
 
-// Редактирование аватара пользователя
 function updateAvatar(req, res, next) {
   const { avatar } = req.body;
   const { userId } = req.user;
@@ -160,7 +152,6 @@ function updateAvatar(req, res, next) {
     });
 }
 
-// редактирование данных пользователя
 function updateProfile(req, res, next) {
   const { name, about } = req.body;
   const { userId } = req.user;

@@ -1,5 +1,3 @@
-// подключаем dotenv, для работы секретного
-// ключа из файла .env на сервере
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');

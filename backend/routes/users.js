@@ -1,14 +1,9 @@
-// Создание экземпляра роутера Express
 const router = require('express').Router();
-
-// Импорт модуля celebrate для валидации запросов
 
 const { celebrate, Joi } = require('celebrate');
 
-// Импорт регулярного выражения для проверки URL
 const { regexUrl } = require('../utils/constants');
 
-// Импорт контроллеров для обработки запросов к пользователям
 const {
   getUsers,
   getUserById,
@@ -17,13 +12,10 @@ const {
   updateAvatar,
 } = require('../controllers/users');
 
-// пользователи
 router.get('/', getUsers);
 
-// пользователь
 router.get('/me', getUserInfo);
 
-// Конкретный пользователь по его ID:
 router.get(
   '/:id',
   celebrate({
@@ -34,7 +26,6 @@ router.get(
   getUserById,
 );
 
-// Редактирование данных пользователя:
 router.patch(
   '/me',
   celebrate({
@@ -46,7 +37,6 @@ router.patch(
   updateProfile,
 );
 
-// Редактирование аватара пользователя:
 router.patch(
   '/me/avatar',
   celebrate({

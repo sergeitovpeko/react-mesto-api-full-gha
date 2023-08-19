@@ -9,11 +9,7 @@
     "start": "node app.js",
     "depcheck": "depcheck"
   },
-  "keywords": [
-    "бэкенд",
-    "Express.js",
-    "MongoDB"
-  ],
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {

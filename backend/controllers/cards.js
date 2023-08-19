@@ -1,20 +1,15 @@
-// Создание константы Card из модели card для дальнейшего
-// использования в функциях
 const Card = require('../models/card');
 
-// Импорты ошибок из файла errors
 const AccessDeniedError = require('../errors/AccessDeniedError');
 const NotFoundPageError = require('../errors/NotFoundPageError');
 const InvalidDataError = require('../errors/InvalidDataError');
 
-// Получение массива карточек
 function getCards(_, res, next) {
   Card.find({})
     .then((cards) => res.send({ data: cards }))
     .catch(next);
 }
 
-// Создание новой карточки
 function createNewCard(req, res, next) {
   const { name, link } = req.body;
   const { userId } = req.user;
@@ -34,7 +29,6 @@ function createNewCard(req, res, next) {
     });
 }
 
-// Лайк на карточки:
 function addLikeCard(req, res, next) {
   const { cardId } = req.params;
   const { userId } = req.user;
@@ -68,7 +62,6 @@ function addLikeCard(req, res, next) {
     });
 }
 
-// Снятие лайка с карточки
 function removeLikeCard(req, res, next) {
   const { cardId } = req.params;
   const { userId } = req.user;
@@ -102,7 +95,6 @@ function removeLikeCard(req, res, next) {
     });
 }
 
-// Удаление карточки из массива
 function deleteCard(req, res, next) {
   const { id: cardId } = req.params;
   const { userId } = req.user;
