@@ -1,0 +1,18 @@
+.elements__bin {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  box-sizing: border-box;
+  border: 0;
+  width: 23px;
+  height: 19px;
+  padding: 0;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  background: transparent url(../../../images/icons/bin_button.svg) center/contain no-repeat;
+}
+
+.elements__bin:hover {
+  opacity: 0.5;
+}

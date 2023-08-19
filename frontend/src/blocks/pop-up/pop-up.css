@@ -1,0 +1,17 @@
+.pop-up {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s ease;
+  /* del or mod trans prop later ↑ */
+}

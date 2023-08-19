@@ -1,0 +1,19 @@
+.elements__butt {
+  background-image: url(../../../images/icons/heart_button_disabled.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  width: 23px;
+  height: 19px;
+  box-sizing: border-box;
+  border: none;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease;
+}
+
+.elements__butt:hover {
+  opacity: 0.5;
+}

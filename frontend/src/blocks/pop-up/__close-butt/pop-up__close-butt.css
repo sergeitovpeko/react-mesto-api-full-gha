@@ -1,0 +1,28 @@
+.pop-up__close-butt {
+  display: block;
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  background-image: url(../../../images/icons/close_icon_l.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.pop-up__close-butt:hover {
+  opacity: 0.5;
+}
+@media (max-width: 550px) {
+  .pop-up__close-butt {
+    width: 20px;
+    height: 20px;
+    top: -36px;
+    right: -1px;
+  }
+}
